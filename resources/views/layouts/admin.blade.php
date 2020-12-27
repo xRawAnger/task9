@@ -21,6 +21,15 @@
                             <button  class="btn btn-primary" {{-- type="button" --}} {{-- href="{{ route('registerpage') }}" --}}>Add</button>
                         </form>
                     </div>
+                    <div class="container">
+{{--                     @foreach ($products as $product)
+                        <div >
+                                <a href="#" class="imageContainer"><img src="{{ asset('images')."/".$product->image}}"></a>
+                                <a href="#"class="text-center"><div>{{ $product->title }}</div></a>
+                                <a href="#"class="text-center"><div>{{ $product->description }}</div></a>
+                        </div>
+                    @endforeach    --}}                     
+                    </div>
                 </div>
             </div>
         </div>

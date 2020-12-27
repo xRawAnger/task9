@@ -33,5 +33,16 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
+    "google"=>[
+        "client_id"=>env("GOOGLE_CLIENT_ID"),
+        "client_secret"=>env("GOOGLE_CLIENT_REDIRECT"),
+        "redirect"=>env("GOOGLE_REDIRECT_URL"),
+    ],
+    "facebook"=>[
+        "client_id"=>env("GOOGLE_CLIENT_ID"),
+        "client_secret"=>env("GOOGLE_CLIENT_REDIRECT"),
+        "redirect"=>env("GOOGLE_REDIRECT_URL"),
+    ],
+
 
 ];

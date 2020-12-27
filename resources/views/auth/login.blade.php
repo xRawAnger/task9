@@ -66,6 +66,12 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <div>
+                                    <a href="/sign-in/google" class="btn btn-primary">Sign in with google</a>
+                                </div>
+                                                                <div>
+                                    <a href="/sign-in/facebook" class="btn btn-primary">Sign in with facebook</a>
+                                </div>
                             </div>
                         </div>
                     </form>

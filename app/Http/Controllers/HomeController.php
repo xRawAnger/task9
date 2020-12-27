@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Products;
 use Illuminate\Http\Request;
 
@@ -24,8 +25,8 @@ class HomeController extends Controller
     public function index()
     {
     }
-    // public function MainPage(){
-    //     $products=Products::get();
-    //     return view('home.home', ["products" => $products]);
-    // }
+    public function OpenPage(){
+        $products=Products::get();
+        return view('home.home', ['products'=>$products]);
+    }
 }

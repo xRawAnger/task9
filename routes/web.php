@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'ProductsController@MainPage')->middleware('auth');
+Route::get('/home', 'HomeController@OpenPage')->middleware('auth');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/myAccount', 'ProductsController@index');
@@ -37,4 +37,12 @@ Route::view('/admin', 'layouts.admin');
 Route::view('/normalUser', 'layouts.normalUser');
 
 Route::post("/add-product","ProductsController@save")->name("saveproducts");
+
+
+Route::get("/sign-in/google", 'Auth\LoginController@google');
+Route::get("/sign-in/google/redirect", 'Auth\LoginController@google_redirect');
+
+Route::get("/sign-in/facebook", 'Auth\LoginController@facebook');
+Route::get("/sign-in/facebook/redirect", 'Auth\LoginController@facebook_redirect');
+
 

@@ -1,5 +1,6 @@
-@extends('layouts.auth')
+@extends('layouts.auth','')
 
+@include('views.')
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -8,7 +9,13 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                     Hi there, regular user
+{{--                     @foreach ($products as $product)
+                        <div >
+                                <a href="#" class="imageContainer"><img src="{{ asset('images')."/".$product->image}}"></a>
+                                <a href="#"class="text-center"><div>{{ $product->title }}</div></a>
+                                <a href="#"class="text-center"><div>{{ $product->description }}</div></a>
+                        </div>
+                    @endforeach --}}
                 </div>
             </div>
         </div>

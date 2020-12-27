@@ -8,7 +8,13 @@
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                    Hi there, awesome writer
+{{--                     @foreach ($products as $product)
+                        <div >
+                                <a href="#" class="imageContainer"><img src="{{ asset('images')."/".$product->image}}"></a>
+                                <a href="#"class="text-center"><div>{{ $product->title }}</div></a>
+                                <a href="#"class="text-center"><div>{{ $product->description }}</div></a>
+                        </div>
+                    @endforeach --}}
                 </div>
             </div>
         </div>

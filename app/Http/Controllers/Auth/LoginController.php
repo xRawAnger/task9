@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Socialite;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -78,4 +78,38 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
+
+    public function google(){
+        return Socialite::driver("google"->redirect());
+    }
+
+    public function google_redirect(){
+        $user=Socialite::driver("google")->stateless()->user();
+        $user=User::firstOrCreate([
+            "email"=>$user->email
+        ],[
+            "email"=>$user->email,
+            "name"=>$user->name?$user->name:$user->nickname,
+
+        ]);
+        Auth::login($user,true);
+        return redirect()->route("home");
+    }
+    public function facebook()
+    {
+        return Socialite::driver("facebook"->redirect());
+    }
+    public function facebook_redirect()
+    {
+        $fbuser=Socialite::driver("facebook")->stateless()->user();
+        $fbuser=User::firstOrCreate([
+            "email"=>$fbuser->email
+        ],[
+            "email"=>$fbuser->email,
+            "name"=>$fbuser->name,
+        ]);
+        Auth::login($fbuser,true);
+        return redirect()->route("home");
+    }
+
 }

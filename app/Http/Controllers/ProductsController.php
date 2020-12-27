@@ -28,11 +28,11 @@ class ProductsController extends Controller
         return view('layouts.admin');
     }
 
-    public function MainPage()
-    {
-        $products=Products::get();
+    // public function MainPage()
+    // {
+    //     $products=Products::get();
 
-        return view('home.home', ['products' => $products]);
-    }
+    //     return view('home.home', ['products' => $products]);
+    // }
 
 }
